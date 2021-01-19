@@ -31,7 +31,6 @@
     if(isset($_GET['msg']) && $_GET['msg'] == 'success') {
         echo '<div class="alert alert-success text-center" role="alert">Uw formulier is verstuurd!</div>';
     }
-
 ?>
 
 <!DOCTYPE html>
