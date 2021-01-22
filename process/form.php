@@ -16,8 +16,6 @@
         $query = "UPDATE oefenexamen_users SET distance = '$distance', travel_time = '$travel_time', transport = '$transport', start_time = '$start_time', end_time = '$end_time', comment = '$comment', filled_in = '$filled_in' WHERE id = '$id'";
         $result = mysqli_query($mysqli, $query);
 
-        echo $query;
-
         if ($result) {
             header('Location:../home.php?msg=success');
         } else {
