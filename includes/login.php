@@ -29,5 +29,4 @@
         echo 'Niet alle velden zijn ingevuld';
         exit;
     }
-
 ?>

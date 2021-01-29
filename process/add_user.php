@@ -19,7 +19,7 @@
     // Redirect
     header('location:../index.php?ver=empty');
 
-    // To database
+    // Check if values are not empty and write to database
     if(strlen($student_number) > 0 && strlen($class) > 0 && strlen($first_name) > 0 && strlen($last_name) > 0 && strlen($address) > 0 && strlen($zipcode) > 0 && strlen($age) > 0 && strlen($email) > 0 && strlen($password) > 0) {
         $query = "INSERT INTO oefenexamen_users (student_number, class, first_name, last_name, address, zipcode, age, residence, email, password, user_level, verified, link)";
         $query .= "VALUES('$student_number', '$class', '$first_name', '$last_name', '$address', '$zipcode', '$age', '$residence', '$email', '$password', '$user_level', '$verified', '$link')";

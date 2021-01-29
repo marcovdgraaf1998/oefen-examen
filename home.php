@@ -251,7 +251,7 @@
             </tr>
             <tbody id="table">
                 <?php while($row = mysqli_fetch_array($result)) : ?>
-                    <?php if($row['user_level'] == 1) : ?>
+                    <?php if($row['user_level'] == 1 && $row['filled_in'] == 1) : ?>
                         <tr>
                             <td><?= $row['student_number'];?></td>
                             <td><?= $row['class'];?></td>
