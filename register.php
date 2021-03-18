@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h1 class="text-center mt-5">Enquete Grafisch Lyceum Rotterdam aanmelden</h1>
-        <form action="process/add_user.php" method="post">
+        <form action="process/addUser.php" method="post">
             <div class="row">
                 <div class="col">
                     <label for="student_number">Studentnummer</label>
