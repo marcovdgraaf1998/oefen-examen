@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
     require_once '../includes/config.php';
     require_once '../includes/session.php';
@@ -14,17 +13,12 @@
 ?>
 
 
-=======
->>>>>>> e898bd9a46f660b97e5dd2e4885f4b204087863e
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css'/>
-=======
->>>>>>> e898bd9a46f660b97e5dd2e4885f4b204087863e
     <title>Document</title>
 </head>
 <body>
@@ -32,11 +26,7 @@
         <h1 class="text-center">Welkom, <?=$first_name?></h1>
         <p class="text-center">Bekijk hier alle formulieren</p>
         <div class="text-center mt-4 mb-4">
-<<<<<<< HEAD
             <a class="text-center btn btn-danger" href="../includes/logout.php">Uitloggen</a>
-=======
-            <a class="text-center btn btn-danger" href="includes/logout.php">Uitloggen</a>
->>>>>>> e898bd9a46f660b97e5dd2e4885f4b204087863e
         </div>
     <table class="table" cellspacing="0">
         <tr>
@@ -52,13 +42,8 @@
             <th>Opmerkingen</th>
         </tr>
         <tbody id="table">
-<<<<<<< HEAD
             <?php while($row = mysqli_fetch_array($query)) : ?>
                 <?php if($row['filled_in'] == 1) : ?>
-=======
-            <?php while($row = mysqli_fetch_array($result)) : ?>
-                <?php if($row['user_level'] == 1 && $row['filled_in'] == 1) : ?>
->>>>>>> e898bd9a46f660b97e5dd2e4885f4b204087863e
                     <tr>
                         <td><?= $row['student_number'];?></td>
                         <td><?= $row['class'];?></td>

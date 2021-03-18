@@ -20,11 +20,7 @@
             $_SESSION['first_name'] = $getDbValues['first_name'];
             $_SESSION['filled_in'] = $getDbValues['filled_in'];
 
-<<<<<<< HEAD
             header('Location:../enquete/enquete.php');
-=======
-            header('Location:../enquete.php');
->>>>>>> e898bd9a46f660b97e5dd2e4885f4b204087863e
         } else {
             header('Location:../enquete/index.php');
             exit;
