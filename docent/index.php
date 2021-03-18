@@ -19,7 +19,7 @@
 <body>
     <div class="container">
         <h1 class="text-center mt-5">Inloggen enquete Grafisch Lyceum Rotterdam</h1>
-        <form action="includes/login.php" method="post">
+        <form action="login.php" method="post">
         <div class="row mb-4">
             <div class="col">
                 <label for="email">E-mailadres</label>
