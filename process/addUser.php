@@ -15,10 +15,10 @@
 
     $link = sha1($student_number . $first_name . $last_name);
 
-    // Redirect user dient eerst te verifiëren via email
+    # Redirect user dient eerst te verifiëren via email
     header('location:../enquete/index.php?ver=empty');
 
-    // Schrijf gegevens naar database
+    # Schrijf gegevens naar database
     if(strlen($student_number) > 0 && strlen($class) > 0 && strlen($first_name) > 0 && strlen($last_name) > 0 && strlen($address) > 0 && strlen($zipcode) > 0 && strlen($age) > 0 && strlen($email) > 0 && strlen($password) > 0) {
         $query = "INSERT INTO oefenexamen_enquetes (student_number, class, first_name, last_name, address, zipcode, age, residence, email, password, verified, link)";
         $query .= "VALUES('$student_number', '$class', '$first_name', '$last_name', '$address', '$zipcode', '$age', '$residence', '$email', '$password', '$verified', '$link')";
