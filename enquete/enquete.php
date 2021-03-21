@@ -1,7 +1,4 @@
 <?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
 
     require_once '../includes/config.php';
     require_once '../includes/session.php';
@@ -33,6 +30,10 @@
 
     if(isset($_GET['msg']) && $_GET['msg'] == 'success') {
         echo '<div class="alert alert-success text-center" role="alert">Uw formulier is verstuurd!</div>';
+    }
+
+    if(isset($_GET['msg']) && $_GET['msg'] == 'success') {
+        echo '<div class="alert alert-error text-center" role="alert">Er is een fout opgetreden.</div>';
     }
 ?>
 

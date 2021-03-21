@@ -1,6 +1,8 @@
 <?php
     require_once '../includes/config.php';
 
+    $errors = 0;
+
     // Haal waardes binnen en htmlentities
     $student_number = htmlentities($_POST['student_number']);
     $class = htmlentities($_POST['class']);
@@ -19,7 +21,8 @@
     header('location:../enquete/index.php?ver=empty');
 
     # Schrijf gegevens naar database
-    if(strlen($student_number) > 0 && strlen($class) > 0 && strlen($first_name) > 0 && strlen($last_name) > 0 && strlen($address) > 0 && strlen($zipcode) > 0 && strlen($age) > 0 && strlen($email) > 0 && strlen($password) > 0) {
+
+    if(strlen($student_number) > 0 && strlen($class) > 0 && strlen($first_name) > 0 && strlen($last_name) > 0 && strlen($address) > 0 && preg_match("/^\W*[1-9]{1}[0-9]{3}\W*[a-zA-Z]{2}\W*$/",  $zipcode) > 0 && strlen($age) > 0 && strlen($email) > 0 && strlen($password) > 0) {
         $query = "INSERT INTO oefenexamen_enquetes (student_number, class, first_name, last_name, address, zipcode, age, residence, email, password, verified, link)";
         $query .= "VALUES('$student_number', '$class', '$first_name', '$last_name', '$address', '$zipcode', '$age', '$residence', '$email', '$password', '$verified', '$link')";
         

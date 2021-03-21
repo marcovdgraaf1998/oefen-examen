@@ -21,7 +21,7 @@
         if ($result) {
             header('Location:../enquete/enquete.php?msg=success');
         } else {
-            echo 'Er ging iets mis!';
+            header('Location:../enquete/enquete.php?msg=failed');
         }
     }
 ?>
