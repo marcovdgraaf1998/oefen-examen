@@ -20,19 +20,19 @@
         # Check inputs en errors
         if (empty($student_number) || empty($class) || empty($first_name) || empty($last_name) || empty($address) || empty($zipcode) || empty($age) || empty($residence) || empty($password)) {
             header('location:../register.php?signup=empty');
-            exit();
+            exit;
         } else if (!is_numeric($student_number) && strlen($student_number) <= 0 ||!is_numeric($class) && strlen($class) <= 0 || !is_numeric($age) && strlen($age) <= 0)  {
             header('location:../register.php?signup=number');
-            exit();
+            exit;
         } else if (!is_string($first_name) || !is_string($last_name) || !is_string($residence)) {
             header('location:../register.php?signup=char');
-            exit();
+            exit;
         } else if (!preg_match('/^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$/i', $zipcode)) {
             header('location:../register.php?signup=zipcode');
-            exit();
+            exit;
         }  else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             header('location:../register.php?signup=email');
-            exit();
+            exit;
         } else {
             # Redirect user dient eerst te verifiëren via email
             header('location:../enquete/index.php?ver=empty');

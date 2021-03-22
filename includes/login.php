@@ -1,5 +1,5 @@
 <?php
-    include 'config.php';
+    require_once 'config.php';
     session_start();
 
     $email = $_POST['email'];
@@ -21,12 +21,13 @@
             $_SESSION['filled_in'] = $getDbValues['filled_in'];
 
             header('Location:../enquete/enquete.php');
+            exit;
         } else {
-            header('Location:../enquete/index.php');
+            header('Location:../enquete/index.php?login=failed');
             exit;
         }
     } else {
-        echo 'Niet alle velden zijn ingevuld';
+        header('Location:../enquete/index.php?login=empty');
         exit;
     }
 ?>

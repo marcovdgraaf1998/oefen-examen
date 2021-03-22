@@ -7,7 +7,7 @@
         } else if ($signupCheck == 'char') {
             echo '<div class="alert alert-danger text-center" role="alert">U heeft geen geldige tekens ingevoerd bij de tekstvelden!</div>';
         } else if ($signupCheck == 'number') {
-            echo '<div class="alert alert-danger text-center" role="alert">U heeft geen nummers ingevoerd bij de nummer velden!</div>';
+            echo '<div class="alert alert-danger text-center" role="alert">U heeft geen nummers ingevoerd bij de nummervelden!</div>';
         } else if ($signupCheck == 'zipcode') {
             echo '<div class="alert alert-danger text-center" role="alert">U heeft geen geldige postcode ingevoerd</div>';
         } else if ($signupCheck == 'email') {

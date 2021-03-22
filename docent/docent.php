@@ -1,6 +1,6 @@
 <?php
-    include '../includes/config.php';
-    include '../includes/session.php';
+    require_once '../includes/config.php';
+    require_once '../includes/session.php';
 
     $email = $_SESSION['email'];
     $first_name = $_SESSION['first_name'];
@@ -8,14 +8,13 @@
     $query = mysqli_query($mysqli, "SELECT * FROM oefenexamen_enquetes ORDER BY last_name");
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css'/>
-    <title>Document</title>
+    <title>Docent</title>
 </head>
 <body>
     <div class="container">

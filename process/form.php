@@ -1,5 +1,5 @@
 <?php
-    include '../validateFunction.php';
+    include '../includes/validateFunction.php';
     include '../includes/config.php';
     include '../includes/session.php';
 

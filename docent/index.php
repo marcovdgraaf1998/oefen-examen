@@ -1,13 +1,12 @@
 <?php
-    # Login check en errors tonen
+    # Login check notificaties
     if (isset($_GET['login'])) {
         $loginCheck = $_GET['login'];
 
-        if ($loginCheck == 'match') {
-            echo '<div class="alert alert-danger text-center" role="alert">Geen gebruiker gevonden!</div>';
-            exit();
-        } else if ($loginCheck == 'failed') {
+        if ($loginCheck == 'empty') {
             echo '<div class="alert alert-danger text-center" role="alert">Niet alle velden zijn ingevuld!</div>';
+        } else if ($loginCheck == 'failed') {
+            echo '<div class="alert alert-danger text-center" role="alert">Geen gebruiker gevonden</div>';
         }
     }
 ?>
@@ -23,7 +22,7 @@
 <body>
     <div class="container">
         <h1 class="text-center mt-5">Inloggen docenten</h1>
-        <form action="../includes/loginDocent.php" method="post">
+        <form action="login.php" method="post">
             <div class="row mb-4">
                 <div class="col">
                     <label for="email">E-mailadres</label>
@@ -34,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            <input type="submit" class="btn btn-primary float-right" id="submit" value="Log in"></input>
+            <input type="submit" class="btn btn-primary float-right" id="submit" name="submit" value="Log in"></input>
         </form>
     </div>
 </body>

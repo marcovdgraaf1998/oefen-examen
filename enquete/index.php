@@ -4,9 +4,20 @@
         $verificationCheck = $_GET['ver'];
 
         if ($verificationCheck == 'empty') {
-            echo '<div class="alert alert-danger" role="alert">U dient eerst uw emailadres te verifieren!</div>';
+            echo '<div class="alert alert-warning text-center" role="alert">U dient eerst uw emailadres te verifieren!</div>';
         } else if ($verificationCheck == 'success') {
-            echo '<div class="alert alert-success" role="alert">Uw e-mailadres is geverifeerd en u kunt nu inloggen!</div>';
+            echo '<div class="alert alert-success text-center" role="alert">Uw e-mailadres is geverifeerd en u kunt nu inloggen!</div>';
+        }
+    }
+
+    # Login check notificatie
+    if (isset($_GET['login'])) {
+        $loginCheck = $_GET['login'];
+
+        if ($loginCheck == 'empty') {
+            echo '<div class="alert alert-warning text-center" role="alert">Niet alle velden zijn ingevuld!</div>';
+        } else if ($loginCheck == 'failed') {
+            echo '<div class="alert alert-warning text-center" role="alert">Onjuiste inloggegevens!</div>';
         }
     }
 ?>
