@@ -1,14 +1,15 @@
 <?php
+    include '../includes/config.php';
+    include '../includes/session.php';
 
-    require_once '../includes/config.php';
-    require_once '../includes/session.php';
-
+    # Haal sessie waardes binnen
     $id = $_SESSION['id'];
     $email = $_SESSION['email'];
     $user_level = $_SESSION['user_level'];
     $first_name = $_SESSION['first_name'];
     $filled_in = $_SESSION['filled_in'];
 
+    # Verkrijg waarden van form van user
     if (is_numeric($id)) {
         $queryEdit = mysqli_query($mysqli, "SELECT * FROM oefenexamen_enquetes WHERE id = $id");
     
@@ -19,21 +20,20 @@
         }
     } else {
         echo "Er is iets misgegaan, onjuist ID";
-        exit;
-    }
-
-    if (!$email) {
-        header('Location:index.php');
+        exit();
     }
 
     $result = mysqli_query($mysqli, "SELECT * FROM oefenexamen_enquetes ORDER BY last_name");
 
-    if(isset($_GET['msg']) && $_GET['msg'] == 'success') {
-        echo '<div class="alert alert-success text-center" role="alert">Uw formulier is verstuurd!</div>';
-    }
+    # Check of form is verstuurd of fout
+    if (isset($_GET['enquete'])) {
+        $enqueteCheck = $_GET['enquete'];
 
-    if(isset($_GET['msg']) && $_GET['msg'] == 'success') {
-        echo '<div class="alert alert-error text-center" role="alert">Er is een fout opgetreden.</div>';
+        if ($enqueteCheck == 'success') {
+            echo '<div class="alert alert-success text-center" role="alert">Uw formulier is verstuurd!</div>';
+        } else if ($enqueteCheck == 'failed') {
+            echo '<div class="alert alert-error text-center" role="alert">Er is een fout opgetreden.</div>';
+        }
     }
 ?>
 

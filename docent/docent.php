@@ -1,13 +1,9 @@
 <?php
-    require_once '../includes/config.php';
-    require_once '../includes/session.php';
+    include '../includes/config.php';
+    include '../includes/session.php';
 
     $email = $_SESSION['email'];
     $first_name = $_SESSION['first_name'];
-
-    if (!$email) {
-        header('Location:index.php');
-    }
 
     $query = mysqli_query($mysqli, "SELECT * FROM oefenexamen_enquetes ORDER BY last_name");
 ?>

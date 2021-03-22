@@ -2,7 +2,7 @@
     session_start();
 
     if (!isset($_SESSION['email']) || strlen($_SESSION['email']) == 0) {
-        header('Location:../enquete/index.php');
+        header('Location:../index.php');
         exit;
     }
 ?>

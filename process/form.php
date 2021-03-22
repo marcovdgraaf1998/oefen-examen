@@ -1,27 +1,26 @@
 <?php
+    include '../validateFunction.php';
+    include '../includes/config.php';
+    include '../includes/session.php';
 
-    require_once '../includes/config.php';
-    require_once '../includes/session.php';
-
+    # Valideer gegevens
     if(isset($_POST['submit'])) {
-        $distance = htmlentities($_POST['distance']);
-        $travel_time = htmlentities($_POST['travel-time']);
+        $distance = validateInput($_POST['distance']);
+        $travel_time = validateInput($_POST['travel-time']);
         $transport = implode(', ', $_POST['transport']);
-        $start_time = htmlentities($_POST['start-time']);
-        $end_time = htmlentities($_POST['end-time']);
-        $comment = htmlentities($_POST['comment']);
+        $start_time = validateInput($_POST['start-time']);
+        $end_time = validateInput($_POST['end-time']);
+        $comment = validateInput($_POST['comment']);
         $filled_in = 1;
         $id = $_SESSION['id'];
 
         $query = "UPDATE oefenexamen_enquetes SET distance = '$distance', travel_time = '$travel_time', transport = '$transport', start_time = '$start_time', end_time = '$end_time', comment = '$comment', filled_in = '$filled_in' WHERE id = '$id'";
         $result = mysqli_query($mysqli, $query);
 
-        echo $query;
-
         if ($result) {
-            header('Location:../enquete/enquete.php?msg=success');
+            header('Location:../enquete/enquete.php?enquete=success');
         } else {
-            header('Location:../enquete/enquete.php?msg=failed');
+            header('Location:../enquete/enquete.php?enquete=failed');
         }
     }
 ?>

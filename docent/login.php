@@ -1,6 +1,6 @@
 <?php
-    require_once 'config.php';
-    session_start();
+    include '../includes/config.php';
+    include '../includes/session.php';
 
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -14,19 +14,18 @@
         $getDbValues = mysqli_fetch_assoc($result);
 
         if (mysqli_num_rows($result) == 1) {
+            # Zet database waardes in sessies
             $_SESSION['email'] = $email;
             $_SESSION['id'] = $getDbValues['id'];
-            $_SESSION['user_level'] = $getDbValues['user_level'];
             $_SESSION['first_name'] = $getDbValues['first_name'];
-            $_SESSION['filled_in'] = $getDbValues['filled_in'];
 
             header('Location:../docent.php');
         } else {
-            header('Location:../index.php');
-            exit;
+            header('location:index.php?login=match');
+            exit();
         }
     } else {
-        echo 'Niet alle velden zijn ingevuld';
-        exit;
+        header('location:index.php?login=failed');
+        exit();
     }
 ?>

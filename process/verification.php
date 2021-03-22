@@ -1,5 +1,5 @@
 <?php
-    require_once '../includes/config.php';
+    include '../includes/config.php';
 
     $id = $_GET['id'];
 
@@ -9,6 +9,6 @@
     if ($result) {
         header('Location:../enquete/index.php?ver=success');
     } else {
-        echo 'Iets ging mis!';
+        echo 'Iets ging mis probeer opnieuw aan te melden!';
     }
 ?>

@@ -1,10 +1,13 @@
 <?php
-    if(isset($_GET['ver']) && $_GET['ver'] == 'empty') {
-        echo '<div class="alert alert-danger" role="alert">U dient eerst uw emailadres te verifieren!</div>';
-    }
+    # Email verificatie notificatie
+    if (isset($_GET['ver'])) {
+        $verificationCheck = $_GET['ver'];
 
-    if(isset($_GET['ver']) && $_GET['ver'] == 'success') {
-        echo '<div class="alert alert-success" role="alert">Uw e-mailadres is geverifeerd en u kunt nu inloggen!</div>';
+        if ($verificationCheck == 'empty') {
+            echo '<div class="alert alert-danger" role="alert">U dient eerst uw emailadres te verifieren!</div>';
+        } else if ($verificationCheck == 'success') {
+            echo '<div class="alert alert-success" role="alert">Uw e-mailadres is geverifeerd en u kunt nu inloggen!</div>';
+        }
     }
 ?>
 

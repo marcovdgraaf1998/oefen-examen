@@ -1,3 +1,17 @@
+<?php
+    # Login check en errors tonen
+    if (isset($_GET['login'])) {
+        $loginCheck = $_GET['login'];
+
+        if ($loginCheck == 'match') {
+            echo '<div class="alert alert-danger text-center" role="alert">Geen gebruiker gevonden!</div>';
+            exit();
+        } else if ($loginCheck == 'failed') {
+            echo '<div class="alert alert-danger text-center" role="alert">Niet alle velden zijn ingevuld!</div>';
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +27,10 @@
             <div class="row mb-4">
                 <div class="col">
                     <label for="email">E-mailadres</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <input type="email" class="form-control" id="email" name="email" required>
                     <div class="form-group mt-3">
                         <label for="password">Wachtwoord</label>
-                        <input type="password" class="form-control" id="password" name="password">
+                        <input type="password" class="form-control" id="password" name="password" required>
                     </div>
                 </div>
             </div>
